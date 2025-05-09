@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deprem Analiz Projesi</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Türkiye Deprem Analizi</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="map-container">
+                <div id="map"></div> </div>
+            <div class="sidebar">
+                <div class="filter-section">
+                    <h2>Filtreler</h2>
+                    <div class="filter-group">
+                        <label for="startDate">Başlangıç Tarihi:</label>
+                        <input type="date" id="startDate" name="startDate">
+                    </div>
+                    <div class="filter-group">
+                        <label for="endDate">Bitiş Tarihi:</label>
+                        <input type="date" id="endDate" name="endDate">
+                    </div>
+                    <div class="filter-group">
+                        <label for="minMagnitude">Minimum Büyüklük:</label>
+                        <input type="number" id="minMagnitude" name="minMagnitude" min="0" max="10" step="0.1" value="4.0">
+                    </div>
+                    <button id="fetchDataButton">Depremleri Getir</button>
+                </div>
+
+                <hr>
+
+                <div class="stats-section">
+                    <h2>İstatistikler</h2>
+                    <div id="statsContainer">
+                        <p>Toplam Gösterilen Deprem: <span id="totalQuakes">--</span></p>
+                        <div class="chart-wrapper">
+                            <canvas id="monthlyChart"></canvas>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="magnitudeChart"></canvas>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Veriler USGS API (@https://www.usgs.gov) üzerinden anlık olarak çekilmektedir.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
