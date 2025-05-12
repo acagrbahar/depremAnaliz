@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <h1>Türkiye Deprem Analizi</h1>
+        <h1>Deprem Analizi</h1>
     </header>
 
     <main>
@@ -24,6 +24,8 @@
                 <div id="map"></div>
             </div>
             <div class="sidebar">
+                <div id="messageContainer" style="display: none;"></div>
+
                 <div class="filter-section">
                     <h2>Filtreler</h2>
                     <div class="filter-group">
@@ -51,10 +53,10 @@
                         <p>Ortalama Büyüklük: <span id="avgMagnitude">-- M</span></p>
                         <p>En Derin Deprem: <span id="deepestQuake">-- km, --</span></p>
                         <p>En Sığ Deprem: <span id="shallowestQuake">-- km, --</span></p>
-                        <div class="chart-wrapper" style="margin-top: 20px;">
+                        <div class="chart-wrapper">
                             <canvas id="monthlyChart"></canvas>
                         </div>
-                        <div class="chart-wrapper" style="margin-top: 20px;">
+                        <div class="chart-wrapper">
                             <canvas id="magnitudeChart"></canvas>
                         </div>
                     </div>
